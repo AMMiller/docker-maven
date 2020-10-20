@@ -5,4 +5,3 @@ RUN apt update && \
     apt install -y docker.io
 
 
-CMD mvn

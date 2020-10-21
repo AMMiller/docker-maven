@@ -4,5 +4,10 @@ RUN apt update && \
     apt install -y git && \
     apt install -y docker.io
 
+WORKDIR /tmp
 
-CMD mvn
+RUN git clone https://github.com/AMMiller/boxfuse.git && \
+    mvn package -f /tmp/boxfuse-sample-java-war-hello/pom.xml && \
+    git clone https://github.com/AMMiller/docker-tomcat8.git
+
+ENTRYPOINT  docker build -name tomcat8_boxfuse .rm  

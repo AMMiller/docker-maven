@@ -1,14 +1,12 @@
 FROM maven:3.6.3-slim
 
-RUN apt update && \
-    apt install -y git && \
-    apt install -y docker.io
-
 WORKDIR /tmp
 
-RUN git clone https://github.com/AMMiller/boxfuse.git && \
+RUN apt update && \
+    apt install -y git && \
+    apt install -y docker.io && \
+    git clone https://github.com/AMMiller/boxfuse.git && \
     mvn package -f /tmp/boxfuse/pom.xml && \
     git clone https://github.com/AMMiller/docker-tomcat8.git
 
-ENTRYPOINT  /bin/bash
-#docker build -t tomcat8_boxfuse .  
+ENTRYPOINT docker build -t tomcat8_boxfuse docker-tomcat8/Dockerfile 

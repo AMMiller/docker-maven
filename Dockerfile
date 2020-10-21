@@ -6,7 +6,7 @@ RUN apt update && \
 WORKDIR /tmp
 
 RUN git clone https://github.com/AMMiller/boxfuse.git && \
-    mvn package -f pom.xml && \
+    mvn package -f /tmp/boxfuse/pom.xml && \
     git clone https://github.com/AMMiller/docker-tomcat8.git
 
 ENTRYPOINT  docker build -name tomcat8_boxfuse .  

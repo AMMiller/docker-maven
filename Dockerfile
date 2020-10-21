@@ -1,8 +1,7 @@
 FROM maven:3.6.3-slim
 
 RUN apt update && \
-    apt install -y git && \
-    apt install -y docker.io
+    apt install -y git 
 
 WORKDIR /tmp
 

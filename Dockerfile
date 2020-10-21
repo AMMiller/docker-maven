@@ -9,4 +9,4 @@ RUN apt update && \
     mvn package -f /tmp/boxfuse/pom.xml && \
     git clone https://github.com/AMMiller/docker-tomcat8.git
 
-ENTRYPOINT docker build -t tomcat8_boxfuse docker-tomcat8/Dockerfile 
+ENTRYPOINT docker build -t tomcat8_boxfuse docker-tomcat8/

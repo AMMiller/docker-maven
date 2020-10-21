@@ -10,4 +10,5 @@ RUN git clone https://github.com/AMMiller/boxfuse.git && \
     mvn package -f /tmp/boxfuse/pom.xml && \
     git clone https://github.com/AMMiller/docker-tomcat8.git
 
-ENTRYPOINT  docker build -t tomcat8_boxfuse .  
+ENTRYPOINT  /bin/bash
+#docker build -t tomcat8_boxfuse .  

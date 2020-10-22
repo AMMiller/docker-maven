@@ -11,6 +11,6 @@ RUN apt update && \
     pwd && \
     git clone https://github.com/AMMiller/docker-tomcat8.git && \
     pwd && \
-    cp docker-tomcat8/Dockerfile ../boxfuse
+    cp docker-tomcat8/Dockerfile boxfuse
     
-ENTRYPOINT docker build -t tomcat8_boxfuse ../boxfuse/
+ENTRYPOINT docker build -t tomcat8_boxfuse boxfuse
